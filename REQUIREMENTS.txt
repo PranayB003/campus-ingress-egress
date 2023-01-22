@@ -26,6 +26,7 @@ Data Models:
 - Student:
   - rollNo: {type: string, unique: true}
   - name: string
+  - email: string
   - hostel: string
   - status:
     - insideCampus: bool
@@ -35,7 +36,7 @@ Data Models:
   - employeeID: {type: string, unique: true}
   - name: string
   - email?: string
-  - phone: 
+  - phone: string
   - verifiedBy: ObjectID (Admin._id)
 
 - Admin:
@@ -44,13 +45,12 @@ Data Models:
   - email: string
 
 - Trip:
-  - ttl (time to live index)
+  - //TODO: ttl (time to live index)
   - student: ObjectID (Student._id)
   - outTime: Date
   - inTime: Date
   - verifiedBy: ObjectID (SecurityGuard._id)
-  - destination?: string
-  - transportationDetails?:
+  - //TODO: transportationDetails?:
     - type: string
     - vehicleNumber?: string
 
