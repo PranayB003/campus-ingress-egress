@@ -4,6 +4,7 @@
 API:
 - Login (Admin/SecurityGuard)
 - Register (Admin/SecurityGuard) [Hide Button on Client]
+- Register with face (Student)
 - Verify Admin/SecurityGuard
 - Trip - initiate
 - Trip - conclude
@@ -17,7 +18,6 @@ API:
 
 * NON-PRIORITY  FEATURES *
 - Login (Student)
-- Register (Student)
 - Update transportationDetails (Students only)
 - Notify Student to update transportationDetails
 
