@@ -29,7 +29,7 @@ Data Models:
   - hostel: string
   - status:
     - insideCampus: bool
-    - tripDetails: ObjectID (Trip._id)
+    - currentTrip: ObjectID (Trip._id) | null
 
 - SecurityGuard:
   - employeeID: {type: string, unique: true}
