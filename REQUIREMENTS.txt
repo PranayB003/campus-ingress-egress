@@ -1,0 +1,57 @@
+------- Campus-In-Out --------
+
+----------------------------------------------------------------
+API:
+- Login (Admin/SecurityGuard)
+- Register (Admin/SecurityGuard) [Hide Button on Client]
+- Verify Admin/SecurityGuard
+- Trip - initiate
+- Trip - conclude
+- Fetch student details based on face image
+- Fetch student details
+- Fetch all trips
+  - filter by date(s)
+  - filter by hostel
+- Fetch verification requests
+- Notify admin of new verify requests
+
+* NON-PRIORITY  FEATURES *
+- Login (Student)
+- Register (Student)
+- Update transportationDetails (Students only)
+- Notify Student to update transportationDetails
+
+----------------------------------------------------------------
+Data Models:
+- Student:
+  - rollNo: {type: string, unique: true}
+  - name: string
+  - hostel: string
+  - status:
+    - insideCampus: bool
+    - tripDetails: ObjectID (Trip._id)
+
+- SecurityGuard:
+  - employeeID: {type: string, unique: true}
+  - name: string
+  - email?: string
+  - phone: 
+  - verifiedBy: ObjectID (Admin._id)
+
+- Admin:
+  - employeeID: {type: string, unique: true}
+  - name: string
+  - email: string
+
+- Trip:
+  - ttl (time to live index)
+  - student: ObjectID (Student._id)
+  - outTime: Date
+  - inTime: Date
+  - verifiedBy: ObjectID (SecurityGuard._id)
+  - destination?: string
+  - transportationDetails?:
+    - type: string
+    - vehicleNumber?: string
+
+----------------------------------------------------------------
