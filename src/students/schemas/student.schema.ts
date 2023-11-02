@@ -6,7 +6,13 @@ export type StudentDocument = HydratedDocument<Student>;
 
 @Schema()
 export class Student {
-  @Prop({ unique: true, required: true })
+  @Prop({
+    unique: true,
+    uppercase: true,
+    // TODO: figure out a way to get roll no of the student
+    // apart from asking the student for it
+    // required: true,
+  })
   rollNo: string;
 
   @Prop({ required: true })
